@@ -34,6 +34,9 @@ def test_pattern():
     subject.add_observer(observer_second)
     
     producer.changed('Fourth value emitted')
+
+    subject.remove_observer(observer_second)
+
     producer.changed('Fifth value emitted')
    
     observer_third = ConcreteObserverThird()
