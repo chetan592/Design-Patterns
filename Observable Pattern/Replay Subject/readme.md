@@ -4,7 +4,7 @@ Number of values to replay need to specify while creating ReplaySubject as shown
 <h5>Roles -</h5> 
     <h6>ReplaySubject</h6> - Notifies the all subscribers. Also replay specified number of previously emitted values to new subscribers.<br>
     <h6>Observer</h6> - Register to Subject to get notified.<br>
-    <h6>Producer</h6> - Something changes here . Producer register Subject class to notify about changes<br><br>
+    <h6>Producer</h6> - Change happens here. Producer uses Subject to notify subscribers about changes.<br><br>
 
 This is a part of reactive programming.<br>
 There is famous library called as <b>rxjs</b> which provides observable functionality that you can use in projects.
