@@ -1,9 +1,9 @@
 from subject import Subject
-from observer import Observer,ObserverSecond
+from observer import ConcreteObserver,ConcreteObserverSecond
 from producer import Producer
 
 '''
-    Observer desgin pattern to create a system to notify about changes
+    Observer desgin pattern to create a system which notifies about changes
 
     Roles - 
         Subject - Notifies the all subscribers
@@ -13,19 +13,22 @@ from producer import Producer
 
 def test_pattern():
     subject = Subject()
-    producer = Producer(subject)
-    observable = Observer()
+    producer = Producer()
+    producer.add_subject(subject)
+    observer = ConcreteObserver()
     
-    subject.add_observer(observable)
-
+    subject.add_observer(observer)
 
     producer.data_changed('First stream emitted')
     producer.data_changed('Second stream emitted')
+
+    subject.remove_observer(observer)
+
+    observer_second = ConcreteObserverSecond()
+
+    subject.add_observer(observer_second)
+
     producer.data_changed('Third stream emitted')
-
-    observable_second = ObserverSecond()
-
-    subject.add_observer(observable_second)
 
     producer.data_changed('Fourth stream emitted')
 

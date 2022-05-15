@@ -1,17 +1,17 @@
 import  zope.interface
 
-class Observers(zope.interface.Interface):
+class Observer(zope.interface.Interface):
     def notified():
         pass
 
 
-@zope.interface.implementer(Observers)
-class Observer:
+@zope.interface.implementer(Observer)
+class ConcreteObserver:
     def notified(self,data:str):
         print(f'stream(Observable) ... :{data}')
 
-@zope.interface.implementer(Observers)
-class ObserverSecond:
+@zope.interface.implementer(Observer)
+class ConcreteObserverSecond:
     def notified(self,data:str):
         print(f'stream(ObservableSecond)... {data}')
 
