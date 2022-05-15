@@ -1,6 +1,6 @@
 # Observable Patterns
 Observables are reactive programming concept. 
-There is library called as **rxjs** which provides out of the box Observables
+There is library called as [rxjs](https://rxjs.dev/) which provides out of the box Observables
 implmentation with loads of other type of observables and operators.
 
 ## Observable Pattern
